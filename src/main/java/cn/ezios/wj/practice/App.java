@@ -1,5 +1,6 @@
 package cn.ezios.wj.practice;
 
+import cn.ezios.wj.practice.service.Speak;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,7 +15,8 @@ public class App
     {
         ApplicationContext ac = new ClassPathXmlApplicationContext("spring-config.xml");
         Parent parent = (Parent) ac.getBean("wParent");
-        System.out.println( "Hello World!" );
         System.out.println("your parent is " + parent.toString());
+        Speak speakService = (Speak) ac.getBean("speakService");
+        speakService.speak();
     }
 }

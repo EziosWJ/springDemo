@@ -9,7 +9,11 @@
         <property name="age" value="20"/>
     </bean>
 
-    <bean id="app" class="cn.ezios.wj.practice.App">
+    <bean id="speakService" class="cn.ezios.wj.practice.service.impl.WangSpeak"/>
+    <bean id="speakServic2" class="cn.ezios.wj.practice.service.impl.YuanSpeak"/>
+
+    <bean id="speaker" class="cn.ezios.wj.practice.controller.Speaker">
+        <property name="speakService" ref="speakServic2"/>
     </bean>
 
 </beans>
