@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CustomerDaoImpl implements CustomerDao {
+public class JdbcCustomerDaoImpl implements CustomerDao {
     private DataSource dataSource;
 
     public void setDataSource(DataSource dataSource){

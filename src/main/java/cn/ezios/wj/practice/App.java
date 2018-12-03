@@ -22,8 +22,8 @@ public class App
 //        speakService.speak();
 
         CustomerDao customerDao = (CustomerDao) ac.getBean("customerDao");
-//        CustomerBean customerBean = new CustomerBean("cus01","wangjian","洗发水");
-//        customerDao.insert(customerBean);
-        customerDao.findById("cus01");
+        CustomerBean customerBean = new CustomerBean("cus03","father","车子");
+        customerDao.insert(customerBean);
+        customerDao.findById("cus03");
     }
 }

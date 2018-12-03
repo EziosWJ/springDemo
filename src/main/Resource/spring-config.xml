@@ -6,7 +6,7 @@
     <import resource="spring-datasource.xml"/>
     <import resource="spring-moudle.xml"/>
 
-    <bean id="customerDao" class="cn.ezios.wj.practice.dao.Impl.CustomerDaoImpl">
+    <bean id="customerDao" class="cn.ezios.wj.practice.dao.Impl.JdbcSupportCustomerDaoImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
