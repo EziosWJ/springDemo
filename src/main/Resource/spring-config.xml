@@ -3,6 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <import resource="spring-datasource.xml"/>
+    <import resource="spring-moudle.xml"/>
+
+    <bean id="customerDao" class="cn.ezios.wj.practice.dao.Impl.CustomerDaoImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
     <bean id="wParent" class="cn.ezios.wj.practice.Parent">
         <property name="idCard" value="140100000000X"/>
         <property name="name" value="王建建"/>
