@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.ezios.wj.practice.dao.UserMapper" >
+
+    <insert id="insert" parameterType="cn.ezios.wj.practice.bean.UserBean" >
+        insert into user(user_id, user_name, user_password)  values (#{userId},#{userName},#{userPassword})
+    </insert>
+    <select id="findById" resultMap="userBeanMap">
+        select * from user where user_Id = #{id}
+    </select>
+
+    <resultMap id="userBeanMap" type="cn.ezios.wj.practice.bean.UserBean" >
+        <id column="user_Id" property="userId"/>
+        <result column="user_Name" property="userName"/>
+        <result column="user_Password" property="userPassword"/>
+    </resultMap>
+
+</mapper>
