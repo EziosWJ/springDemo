@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.ezios.wj.practice.dao.CustomerDao2">
+    <!--  -->
+    <insert id="insert">
+        insert into customer(id,name,wanted) VALUES (#{id},#{name},#{wanted})
+    </insert>
+    <select id="getById" resultType="cn.ezios.wj.practice.bean.CustomerBean">
+        select * from customer where id = #{id}
+    </select>
+</mapper>
