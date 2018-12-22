@@ -31,6 +31,7 @@
     <mappers>
         <!--<package name="cn.ezios.wj.practice.dao.mapper"/>-->
         <mapper resource="cn/ezios/wj/practice/dao/mapper/CustomerDaoMapper.xml"/>
+        <mapper resource="mapper/userMapper.xml"/>
     </mappers>
 
 

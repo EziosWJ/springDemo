@@ -26,6 +26,44 @@ public class AppTest
     {
         assertTrue( true );
     }
+    protected SqlSession session;
+
+    private SqlSession getSession() {
+        return session;
+    }
+
+    @Before
+    public void initMybatis(){
+        Reader reader = null;
+        try {
+            reader = Resources.getResourceAsReader("mybatis-config.xml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+        SqlSession session = sqlSessionFactory.openSession(true);
+        this.session = session;
+    }
+
+    @Test
+    public void testInsertUserBean(){
+        UserBean userBean = new UserBean();
+        userBean.setUserId("u002");
+        userBean.setUserName("ynn");
+        userBean.setUserPassword("123456");
+        SqlSession session = getSession();
+        UserMapper userMapper = session.getMapper(UserMapper.class);
+        int results = userMapper.insert(userBean);
+        System.out.println(results);
+
+    }
+    @Test
+    public void testFindByIdUserBean(){
+        SqlSession session = getSession();
+        UserMapper userMapper = session.getMapper(UserMapper.class);
+        UserBean userBean  = userMapper.findById("u001");
+        System.out.println(userBean);
+    }
 
     @Test
     public void testInsert(){
